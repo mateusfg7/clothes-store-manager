@@ -11,7 +11,6 @@ router.get("/create", async (context) => {
   const request: IRequest = await context.request.body({ type: "json" }).value;
 
   if (typeof request != "object") {
-    console.log("Is an object");
     context.response.status = 400;
     return;
   }
