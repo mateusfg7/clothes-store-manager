@@ -1,7 +1,6 @@
 import { Context } from "https://deno.land/x/oak/mod.ts";
 import { IRequest } from "./types.d.ts";
 
-import database from "../database/connection.ts";
 import Clothes from "../models/Clothes.ts";
 
 export default {
@@ -17,9 +16,6 @@ export default {
       outputValues,
     }: IRequest = await context.request.body({ type: "json" })
       .value;
-
-    database.link([Clothes]);
-    database.sync();
 
     await Clothes.create([
       {
