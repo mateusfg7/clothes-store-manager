@@ -12,5 +12,5 @@ $ deno install -qAf --unstable https://deno.land/x/denon@2.4.4/denon.ts
 ```
 and run the development server:
 ```bash
-denon start
+denon dev
 ```
