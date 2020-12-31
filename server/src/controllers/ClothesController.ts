@@ -1,18 +1,40 @@
 import { Context } from "https://deno.land/x/oak/mod.ts";
-
 import { IRequest } from "./types.d.ts";
+
+import database from "../database/connection.ts";
+import Clothes from "../models/Clothes.ts";
 
 export default {
   async create(context: Context) {
-    const request: IRequest = await context.request.body({ type: "json" })
+    const {
+      product,
+      quantity,
+      provider,
+      price,
+      currentInventory,
+      size,
+      inputValues,
+      outputValues,
+    }: IRequest = await context.request.body({ type: "json" })
       .value;
 
-    if (typeof request != "object") {
-      context.response.status = 400;
-      return;
-    }
+    database.link([Clothes]);
+    database.sync();
 
-    context.response.status = 200;
-    context.response.body = request;
+    await Clothes.create([
+      {
+        product,
+        quantity, // quantidade
+        provider, // fornecedor
+        price, // preço
+        current_inventory: currentInventory, // estoque atual
+        size, // tamanho
+        input_values: inputValues, // valor de entrada
+        output_values: outputValues, // valor de saida
+      },
+    ]);
+
+    context.response.status = 201;
+    context.response.body = { status: "created!" };
   },
 };
