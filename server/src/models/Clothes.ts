@@ -12,7 +12,7 @@ export default class Clothes extends Model {
     product: DataTypes.STRING, // produto
     quantity: DataTypes.INTEGER, // quantidade
     provider: DataTypes.STRING, // fornecedor
-    price: DataTypes.BOOLEAN, // preço
+    price: DataTypes.FLOAT, // preço
     current_inventory: DataTypes.INTEGER, // estoque atual
     size: DataTypes.STRING, // tamanho
     input_values: DataTypes.FLOAT, // valor de entrada
