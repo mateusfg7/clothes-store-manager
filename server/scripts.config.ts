@@ -11,7 +11,7 @@ const config: DenonConfig = {
 
   "watcher": {
     // The number of milliseconds after the last change.
-    "interval": 350,
+    "interval": 100,
     // The file extensions that it will scan for.
     "exts": ["ts", "env"],
     // The globs that it will scan for.
