@@ -1,4 +1,5 @@
 import { Router } from "https://deno.land/x/oak/mod.ts";
+import { IRequest } from "./routes.d.ts";
 
 const router = new Router();
 
@@ -7,7 +8,7 @@ router.get("/", (context) => {
 });
 
 router.get("/create", async (context) => {
-  const request = await context.request.body({ type: "json" }).value;
+  const request: IRequest = await context.request.body({ type: "json" }).value;
 
   if (typeof request != "object") {
     console.log("Is an object");
