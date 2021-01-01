@@ -33,4 +33,10 @@ export default {
     context.response.status = 201;
     context.response.body = { status: "created!" };
   },
+
+  async index(context: Context) {
+    const clothes = await Clothes.all();
+
+    context.response.body = clothes;
+  },
 };
