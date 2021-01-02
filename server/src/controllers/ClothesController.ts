@@ -67,4 +67,23 @@ export default {
     });
     context.response.status = 200;
   },
+
+  async delete(context: RouterContext) {
+    const id = await context.params.id;
+
+    if (!id) {
+      context.response.status = 500;
+      return;
+    }
+
+    const clothesToBeDeleted = await Clothes.find(id);
+
+    if (!clothesToBeDeleted) {
+      context.response.status = 404;
+      return;
+    }
+
+    Clothes.deleteById(id);
+    context.response.status = 200;
+  },
 };
