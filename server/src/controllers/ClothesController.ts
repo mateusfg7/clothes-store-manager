@@ -39,4 +39,18 @@ export default {
 
     context.response.body = clothes;
   },
+
+  async show(context: RouterContext) {
+    const id = await context.params.id;
+
+    const clothesWithSpecificId = await Clothes.where("id", id).get();
+
+    if (clothesWithSpecificId.length === 0) {
+      context.response.status = 404;
+      return;
+    }
+
+    context.response.body = clothesWithSpecificId;
+    context.response.status = 200;
+  },
 };
