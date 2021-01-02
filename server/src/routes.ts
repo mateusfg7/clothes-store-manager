@@ -14,8 +14,8 @@ router.get("/", (context) => {
   context.response.body = { message: "Hello word!" };
 });
 
-router.get("/create", ClothesController.create);
-router.get("/index", ClothesController.index);
-router.get("/show/:id", ClothesController.show);
+router.post("/clothes", ClothesController.create);
+router.get("/clothes", ClothesController.index);
+router.get("/clothes/:id", ClothesController.show);
 
 export default router;
