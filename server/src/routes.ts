@@ -17,5 +17,6 @@ router.get("/", (context) => {
 router.post("/clothes", ClothesController.create);
 router.get("/clothes", ClothesController.index);
 router.get("/clothes/:id", ClothesController.show);
+router.delete("/clothes/:id", ClothesController.delete);
 
 export default router;
