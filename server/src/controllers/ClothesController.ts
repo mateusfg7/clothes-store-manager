@@ -48,9 +48,14 @@ export default {
   async show(context: RouterContext) {
     const id = await context.params.id;
 
-    const clothesWithSpecificId = await Clothes.where("id", id).get();
+    if (!id) {
+      context.response.status = 500;
+      return;
+    }
 
-    if (clothesWithSpecificId.length === 0) {
+    const clothesWithSpecificId = await Clothes.find(id);
+
+    if (!clothesWithSpecificId) {
       context.response.status = 404;
       return;
     }
