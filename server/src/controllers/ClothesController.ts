@@ -5,6 +5,13 @@ import Clothes from "../models/Clothes.ts";
 
 export default {
   async create(context: RouterContext) {
+    const request = context.request.body();
+
+    if (request.type != "json") {
+      context.response.status = 400;
+      return;
+    }
+
     const {
       product,
       quantity,
@@ -14,8 +21,7 @@ export default {
       size,
       inputValues,
       outputValues,
-    }: IRequest = await context.request.body({ type: "json" })
-      .value;
+    }: IRequest = await request.value;
 
     await Clothes.create([
       {
