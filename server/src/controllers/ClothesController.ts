@@ -37,7 +37,6 @@ export default {
     ]);
 
     context.response.status = 201;
-    context.response.body = { status: "created!" };
   },
 
   async index(context: RouterContext) {
