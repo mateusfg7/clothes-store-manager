@@ -1,10 +1,10 @@
-import { Context } from "https://deno.land/x/oak/mod.ts";
+import { RouterContext } from "https://deno.land/x/oak/mod.ts";
 import { IRequest } from "./types.d.ts";
 
 import Clothes from "../models/Clothes.ts";
 
 export default {
-  async create(context: Context) {
+  async create(context: RouterContext) {
     const {
       product,
       quantity,
@@ -34,7 +34,7 @@ export default {
     context.response.body = { status: "created!" };
   },
 
-  async index(context: Context) {
+  async index(context: RouterContext) {
     const clothes = await Clothes.all();
 
     context.response.body = clothes;
