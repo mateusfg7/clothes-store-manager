@@ -7,6 +7,13 @@ const PORT = config().PORT ?? 8000;
 
 const app = new Application();
 
+app.addEventListener("listen", ({ hostname, port, secure }) => {
+  console.log(
+    `Listening on: ${secure ? "https://" : "http://"}${hostname ??
+      "localhost"}:${port}`,
+  );
+});
+
 app.use(router.routes());
 
 await app.listen({ port: Number(PORT) });
