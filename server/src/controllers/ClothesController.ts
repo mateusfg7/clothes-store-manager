@@ -2,6 +2,7 @@ import { RouterContext } from "https://deno.land/x/oak/mod.ts";
 import { IRequest } from "./types.d.ts";
 
 import Clothes from "../models/Clothes.ts";
+import clothesView from "../views/clothes_view.ts";
 
 export default {
   async create(context: RouterContext) {
@@ -42,7 +43,7 @@ export default {
   async index(context: RouterContext) {
     const clothes = await Clothes.all();
 
-    context.response.body = clothes;
+    context.response.body = clothesView.renderMany(clothes);
   },
 
   async show(context: RouterContext) {
@@ -60,7 +61,10 @@ export default {
       return;
     }
 
-    context.response.body = clothesWithSpecificId;
+    context.response.body = clothesView.render(clothesWithSpecificId, {
+      createdAt: clothesWithSpecificId.createdAt,
+      updatedAt: clothesWithSpecificId.updatedAt,
+    });
     context.response.status = 200;
   },
 };
