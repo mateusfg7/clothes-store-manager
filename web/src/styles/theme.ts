@@ -1,7 +1,7 @@
 const defaultTheme = {
   colors: {
-    background: '#fff',
-    text: '#111',
+    background: '#FDCFF3',
+    text: '#070707',
     primary: '#0070f3'
   }
 }

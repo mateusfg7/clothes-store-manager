@@ -5,11 +5,11 @@ const Home: React.FC = () => {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Clothes Store Managers</title>
       </Head>
 
       <main>
-        <h1>Next.js Project Setup</h1>
+        <h1>Clothes Store Manager</h1>
       </main>
     </div>
   )
