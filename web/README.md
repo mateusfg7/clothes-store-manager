@@ -1,6 +1,6 @@
 # Web
 
-Install the dependencies:
+## Install the dependencies:
 _with yarn_
 ```bash
 yarn
@@ -10,7 +10,7 @@ _with npm_
 npm Install
 ```
 
-run the development server:
+## Run the development server:
 _with yarn_
 ```
 yarn dev
