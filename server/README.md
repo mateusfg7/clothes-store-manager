@@ -48,7 +48,7 @@ e.g.:
   "provider": "Luana", 
   "price": 20.00, 
   "currentInventory": 2, 
-  "size": "G, M", 
+  "size": "G,M", 
   "inputValues": 20.00, 
   "outputValues": 20.00
 }
