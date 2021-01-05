@@ -1,7 +1,7 @@
 import { DataTypes, Model } from "https://deno.land/x/denodb/mod.ts";
 
 export default class Clothes extends Model {
-  static table = "top_clothes";
+  static table = "clothes";
   static timestamps = true;
 
   static fields = {
