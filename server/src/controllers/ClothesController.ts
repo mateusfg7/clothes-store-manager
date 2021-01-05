@@ -15,7 +15,7 @@ export default {
 
     const {
       product,
-      type,
+      brand,
       quantity,
       provider,
       price,
@@ -28,7 +28,7 @@ export default {
     await Clothes.create([
       {
         product,
-        type,
+        brand,
         quantity, // quantidade
         provider, // fornecedor
         price, // preço

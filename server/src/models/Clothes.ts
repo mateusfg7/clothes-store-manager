@@ -10,7 +10,7 @@ export default class Clothes extends Model {
       primaryKey: true,
     },
     product: DataTypes.STRING, // produto
-    type: DataTypes.STRING,
+    brand: DataTypes.STRING,
     quantity: DataTypes.INTEGER, // quantidade
     provider: DataTypes.STRING, // fornecedor
     price: DataTypes.FLOAT, // preço

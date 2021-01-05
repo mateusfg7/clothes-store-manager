@@ -6,7 +6,7 @@ export default {
     return {
       id: clothes.id,
       product: clothes.product,
-      type: clothes.type,
+      brand: clothes.brand,
       quantity: clothes.quantity,
       provider: clothes.provider,
       price: clothes.price,
