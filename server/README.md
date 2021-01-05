@@ -1,10 +1,10 @@
 # Back-end
-1. [Init Server]()
-2. [API]()
-  1. [Create]()
-  2. [Index]()
-  3. [Show]()
-  4. [Delete]()
+- [Init Server](#init-server)
+- [API](#api)
+  - [Create](#create)
+  - [Index](#index)
+  - [Show](#show)
+  - [Delete](#delete)
 ## Init server
 Create a `.env` file and add the follow environment variables:
 ```dotenv
