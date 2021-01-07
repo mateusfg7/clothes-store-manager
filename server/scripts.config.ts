@@ -3,7 +3,7 @@ import { DenonConfig } from "https://deno.land/x/denon@2.4.4/mod.ts";
 const config: DenonConfig = {
   scripts: {
     dev: {
-      cmd: "src/server.ts",
+      cmd: "src/app.ts",
       desc: "run my app.ts file",
       allow: ["net", "read", "write"],
     },
