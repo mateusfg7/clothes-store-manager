@@ -5,6 +5,7 @@
   - [Index](#index)
   - [Show](#show)
   - [Delete](#delete)
+  - [Update](#update)
 ## Init server
 Create a `.env` file and add the follow environment variables:
 ```dotenv
@@ -101,5 +102,39 @@ JSON:
 _route_: **DELETE /clothes/:id**
 
 _request body_: **NO BODY**
+
+_expected response status code_: **200**
+
+### Update
+
+_route_: **PUT /clothes/:id**
+
+request body_:
+```yml
+JSON:
+  product: Description of the product - string 
+  brand: Product brand - string
+  quantity: Quantity of product purchased - number
+  provider: Product Provider - string
+  price: Price of the product - float
+  currentInventory: Current stock available - number
+  size: Size of the product - string
+  inputValues: Profit obtained - float
+  outputValues: Product spending - float
+```
+e.g.:
+```json
+{
+  "product": "CROPPED COURINO PRETO",
+  "brand": "ANTONY",
+  "quantity": 2,
+  "provider": "Luana", 
+  "price": 20.00, 
+  "currentInventory": 2, 
+  "size": "G,M", 
+  "inputValues": 20.00, 
+  "outputValues": 20.00
+}
+```
 
 _expected response status code_: **200**
