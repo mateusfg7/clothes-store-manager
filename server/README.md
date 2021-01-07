@@ -109,7 +109,7 @@ _expected response status code_: **200**
 
 _route_: **PUT /clothes/:id**
 
-request body_:
+_request body_:
 ```yml
 JSON:
   product: Description of the product - string 
