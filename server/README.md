@@ -1,5 +1,6 @@
 # Back-end
 - [Init Server](#init-server)
+- [HTTPS](#use-https)
 - [API](#api)
   - [Create](#create)
   - [Index](#index)
@@ -20,6 +21,16 @@ $ deno install -qAf --unstable https://deno.land/x/denon@2.4.4/denon.ts
 and run the development server:
 ```bash
 denon dev
+```
+
+
+## Use HTTPS
+
+To use HTTPS you need to create a folder `src/ssl`, and add your certificate and key inside `src/ssl`, with the names `cert.pem` and `key.pem`.
+
+Then, you need to start de server with the flag `--secure`:
+```text
+deno run --allow-read --allow-write --allow-net src/app.ts --secure
 ```
 
 ## API
@@ -138,3 +149,4 @@ e.g.:
 ```
 
 _expected response status code_: **200**
+

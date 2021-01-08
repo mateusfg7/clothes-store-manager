@@ -16,6 +16,18 @@ App.addEventListener("listen", ({ hostname, port, secure }) => {
 
 if (import.meta.main) {
   const PORT = config().PORT ?? 8000;
+
+  if (Deno.args.includes("--secure")) {
+    await App.listen(
+      {
+        port: Number(PORT),
+        secure: true,
+        certFile: "./src/ssl/cert.pem",
+        keyFile: "./src/ssl/key.pem",
+      },
+    );
+  }
+
   await App.listen({ port: Number(PORT) });
 }
 
