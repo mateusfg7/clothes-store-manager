@@ -1,7 +1,7 @@
 import { DataTypes, Model } from "https://deno.land/x/denodb/mod.ts";
 
 export default class Clothes extends Model {
-  static table = "top_clothes";
+  static table = "clothes";
   static timestamps = true;
 
   static fields = {
@@ -10,6 +10,7 @@ export default class Clothes extends Model {
       primaryKey: true,
     },
     product: DataTypes.STRING, // produto
+    brand: DataTypes.STRING,
     quantity: DataTypes.INTEGER, // quantidade
     provider: DataTypes.STRING, // fornecedor
     price: DataTypes.FLOAT, // preço

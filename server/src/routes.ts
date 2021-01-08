@@ -18,5 +18,6 @@ router.post("/clothes", ClothesController.create);
 router.get("/clothes", ClothesController.index);
 router.get("/clothes/:id", ClothesController.show);
 router.delete("/clothes/:id", ClothesController.delete);
+router.put("/clothes/:id", ClothesController.update);
 
 export default router;
