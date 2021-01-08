@@ -15,6 +15,7 @@ export default {
 
     const {
       product,
+      brand,
       quantity,
       provider,
       price,
@@ -27,6 +28,7 @@ export default {
     await Clothes.create([
       {
         product,
+        brand,
         quantity, // quantidade
         provider, // fornecedor
         price, // preço
@@ -84,6 +86,47 @@ export default {
     }
 
     Clothes.deleteById(id);
+    context.response.status = 200;
+  },
+
+  async update(context: RouterContext) {
+    const id = await context.params.id;
+    const request = context.request.body();
+
+    if (!id || request.type != "json") {
+      context.response.status = 400;
+      return;
+    }
+
+    const {
+      product,
+      brand,
+      quantity,
+      provider,
+      price,
+      currentInventory,
+      size,
+      inputValues,
+      outputValues,
+    }: IRequest = await request.value;
+
+    const newValues = {
+      product,
+      brand,
+      quantity,
+      provider,
+      price,
+      // deno-lint-ignore camelcase
+      current_inventory: currentInventory,
+      size,
+      // deno-lint-ignore camelcase
+      input_values: inputValues,
+      // deno-lint-ignore camelcase
+      output_values: outputValues,
+    };
+
+    await Clothes.where("id", id).update(newValues);
+
     context.response.status = 200;
   },
 };
