@@ -1,4 +1,4 @@
-import { DataTypes, Model } from "https://deno.land/x/denodb/mod.ts";
+import { DataTypes, Model } from "../deps.ts";
 
 export default class Clothes extends Model {
   static table = "clothes";

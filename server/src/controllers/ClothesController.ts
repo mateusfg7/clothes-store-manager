@@ -1,4 +1,4 @@
-import { RouterContext } from "https://deno.land/x/oak/mod.ts";
+import { RouterContext } from "../deps.ts";
 import { IRequest } from "./types.d.ts";
 
 import Clothes from "../models/Clothes.ts";

@@ -1,5 +1,5 @@
-import { Application } from "https://deno.land/x/oak/mod.ts";
-import { config } from "https://deno.land/x/dotenv/mod.ts";
+import { Application } from "./deps.ts";
+import { config } from "./deps.ts";
 
 import router from "./routes.ts";
 
