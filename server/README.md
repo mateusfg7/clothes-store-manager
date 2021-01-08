@@ -15,13 +15,18 @@ PORT=[YOUR PORT NUMBER]
 follow the `.env.example` model.
 
 Install [Denon](https://deno.land/x/denon):
-```bash
-$ deno install -qAf --unstable https://deno.land/x/denon@2.4.4/denon.ts
+```text
+deno install -qAf --unstable https://deno.land/x/denon@2.4.4/denon.ts
 ```
 and run the development server:
-```bash
+```text
 denon dev
 ```
+or the production server:
+```text
+deno run --allow-read --allow-write --allow-net src/app.ts
+```
+> to use SSL see [Use HTTPS](#use-https) topic
 
 
 ## Use HTTPS
