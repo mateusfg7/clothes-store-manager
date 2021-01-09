@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Dashboard = styled.main`
+export const Dashboard = styled.div`
   display: flex;
   height: 100vh;
   border: 1px solid red;
@@ -31,7 +31,7 @@ export const NavSection = styled.section`
   }
 `
 
-export const MainSection = styled.section`
+export const MainSection = styled.main`
   border: 5px solid green;
   width: 100%;
 `
