@@ -1,1 +1,8 @@
-color pallete: 070707-40434e-c297b8-fdcff3-de89be
+color pallete: 070707-40434e-c297b8-fdcff3-de89be-fffbfe
+
+#070707
+#40434e
+#c297b8
+#fdcff3
+#de89be
+#fffbfe
