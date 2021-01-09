@@ -31,7 +31,7 @@ export const NavSection = styled.section`
   }
 `
 
-export const MainSection = styled.main`
+export const Main = styled.main`
   border: 5px solid green;
   width: 100%;
 `

@@ -2,7 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 
-import { Dashboard, NavSection, MainSection } from '../styles/pages/index'
+import { Dashboard, NavSection, Main } from '../styles/pages/index'
 
 const Home: React.FC = () => {
   return (
@@ -29,7 +29,7 @@ const Home: React.FC = () => {
             </ul>
           </nav>
         </NavSection>
-        <MainSection></MainSection>
+        <Main></Main>
       </Dashboard>
     </div>
   )
