@@ -1,8 +1,8 @@
 const defaultTheme = {
   colors: {
-    background: '#FDCFF3',
+    background: '#fffbfe',
     text: '#070707',
-    primary: '#0070f3'
+    primary: '#de89be'
   }
 }
 
