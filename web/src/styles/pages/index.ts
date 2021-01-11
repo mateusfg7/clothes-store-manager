@@ -1,13 +1,12 @@
 import styled from 'styled-components'
+import { transparentize } from 'polished'
 
-export const Dashboard = styled.div`
+export const Display = styled.div`
   display: flex;
   height: 100vh;
 `
 
 export const NavSection = styled.section`
-  border: 1px solid red;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,4 +56,56 @@ export const NavSection = styled.section`
 
 export const Main = styled.main`
   width: 100%;
+  padding: 1rem;
+
+  div.shortcuts {
+    border: 1px solid green;
+
+    width: 100%;
+    height: 3rem;
+
+    margin-bottom: 1.5rem;
+  }
+
+  div.dashboard {
+    width: 100%;
+    min-height: 35rem;
+
+    padding: 1rem;
+
+    border-radius: 1rem;
+    background: ${props => transparentize(0.9, props.theme.colors.primary)};
+
+    h1 {
+      margin-bottom: 1.5rem;
+    }
+
+    div.item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 1.6rem 0;
+
+      span.category {
+        font-weight: bolder;
+      }
+
+      span.product-field {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        width: 100%;
+      }
+
+      span.product-field.product-description {
+        justify-content: left;
+      }
+    }
+
+    div.item + div.item {
+      border-top: 1px solid rgba(0, 0, 0, 0.3);
+    }
+  }
 `
