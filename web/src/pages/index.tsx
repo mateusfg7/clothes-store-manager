@@ -22,11 +22,9 @@ const Home: React.FC = () => {
           <h1>Brito Clothes</h1>
           <p>Clothes manager dashboard</p>
           <nav>
-            <ul>
-              <li>option 1</li>
-              <li>option 2</li>
-              <li>option 3</li>
-            </ul>
+            <div className="option">[A] Roupas</div>
+            <div className="option">[B] Adicionar Roupa</div>
+            <div className="option">[C] Deletar Roupa</div>
           </nav>
         </NavSection>
         <Main></Main>
