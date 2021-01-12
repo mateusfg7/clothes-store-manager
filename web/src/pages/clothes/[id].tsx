@@ -1,6 +1,7 @@
 import React from 'react'
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
+import { format as dateFormat } from 'date-fns'
 
 import numberFormat from '@utils/number-format'
 
@@ -14,6 +15,15 @@ interface Props {
 }
 
 const Clothes: React.FC<Props> = ({ clothes }) => {
+  const formattedCreationTimestamp = dateFormat(
+    new Date(clothes.createdAt),
+    'PPp'
+  )
+  const formattedUpdateTimestamp = dateFormat(
+    new Date(clothes.updatedAt),
+    'PPp'
+  )
+
   return (
     <>
       <Head>
@@ -45,7 +55,7 @@ const Clothes: React.FC<Props> = ({ clothes }) => {
                   <span className="content"> {clothes.current_inventory}</span>
                 </p>
                 <p>
-                  <span className="title">Tamanho:</span>
+                  <span className="title">Tamanhos disponíveis:</span>
                   <span className="content"> {clothes.size}</span>
                 </p>
                 <p>
@@ -75,11 +85,11 @@ const Clothes: React.FC<Props> = ({ clothes }) => {
                 </p>
                 <p>
                   <span className="title">Data de cadastro:</span>
-                  <span className="content"> {clothes.createdAt}</span>
+                  <span className="content">{formattedCreationTimestamp}</span>
                 </p>
                 <p>
                   <span className="title">Data da última atualização:</span>
-                  <span className="content"> {clothes.updatedAt}</span>
+                  <span className="content">{formattedUpdateTimestamp}</span>
                 </p>
               </div>
             </section>
