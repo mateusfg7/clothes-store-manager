@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { transparentize } from 'polished'
 
-import { Main } from '../global-components'
+import { Main } from '@styles/global-components'
 
 export const ExtendedMain = styled(Main)`
   section {
