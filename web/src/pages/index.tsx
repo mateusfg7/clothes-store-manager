@@ -3,10 +3,10 @@ import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
-import Sidebar from '../components/Sidebar'
+import Sidebar from '@components/Sidebar'
 
-import { Display } from '../styles/global-components'
-import { ExtendedMain } from '../styles/pages/index'
+import { Display } from '@styles/global-components'
+import { ExtendedMain } from '@styles/pages/index'
 
 interface Props {
   clothesList: Clothes[]
