@@ -1,29 +1,20 @@
 import styled from 'styled-components'
 import { transparentize } from 'polished'
 
-export const Main = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+import { Main } from '../global-components'
 
-  width: 100vw;
-  height: 100vh;
-
+export const ExtendedMain = styled(Main)`
   section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 15px;
-    min-width: 700px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 1rem;
 
     div {
       padding: 15px;
       width: 100%;
 
-      line-height: 1.9rem;
+      line-height: 2.7rem;
 
       p {
         display: flex;
