@@ -29,17 +29,19 @@ export const ExtendedMain = styled(Main)`
       }
     }
 
+    div.item.title {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
     div.item.content {
+      /* border: 1px solid red; */
+      border-radius: 1rem;
       transition: 0.2s;
       &:hover {
         cursor: pointer;
         background: ${props =>
           transparentize(0.95, props.theme.colors.primary)};
       }
-    }
-
-    div.item + div.item {
-      border-top: 1px solid rgba(0, 0, 0, 0.3);
     }
   }
 `
