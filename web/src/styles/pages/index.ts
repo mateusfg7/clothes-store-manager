@@ -36,11 +36,11 @@ export const ExtendedMain = styled(Main)`
     div.item.content {
       /* border: 1px solid red; */
       border-radius: 1rem;
-      transition: 0.2s;
+      transition: 0.4s;
       &:hover {
         cursor: pointer;
         background: ${props =>
-          transparentize(0.95, props.theme.colors.primary)};
+          transparentize(0.92, props.theme.colors.primary)};
       }
     }
   }
