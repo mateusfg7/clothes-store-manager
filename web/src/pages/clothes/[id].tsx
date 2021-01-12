@@ -2,6 +2,8 @@ import React from 'react'
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 
+import numberFormat from '@utils/number-format'
+
 import Sidebar from '@components/Sidebar'
 
 import { Display } from '@styles/global-components'
@@ -48,15 +50,24 @@ const Clothes: React.FC<Props> = ({ clothes }) => {
                 </p>
                 <p>
                   <span className="title">Preço do produto:</span>
-                  <span className="content"> {clothes.price}</span>
+                  <span className="content">
+                    {' '}
+                    {numberFormat.format(clothes.price)}
+                  </span>
                 </p>
                 <p>
                   <span className="title">Preço de entrada:</span>
-                  <span className="content"> {clothes.input_values}</span>
+                  <span className="content">
+                    {' '}
+                    {numberFormat.format(clothes.input_values)}
+                  </span>
                 </p>
                 <p>
                   <span className="title">Preço de saida:</span>
-                  <span className="content"> {clothes.output_values}</span>
+                  <span className="content">
+                    {' '}
+                    {numberFormat.format(clothes.output_values)}
+                  </span>
                 </p>
                 <p>
                   <span className="title">Provedor:</span>
