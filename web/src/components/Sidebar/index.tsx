@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { BiBox, BiPlusCircle } from 'react-icons/bi'
 
 import { Section, Menu, Option } from './styles'
 
@@ -12,10 +13,20 @@ const Sidebar: React.FC = () => {
       <p>Clothes manager dashboard</p>
       <Menu>
         <Link href="/">
-          <Option className="option">[A] Roupas</Option>
+          <Option className="option">
+            <span className="icon">
+              <BiBox />
+            </span>
+            <span className="title">Roupas</span>
+          </Option>
         </Link>
         <Link href="#">
-          <Option className="option">[B] Adicionar Roupa</Option>
+          <Option className="option">
+            <span className="icon">
+              <BiPlusCircle />
+            </span>
+            <span className="title">Adicionar Roupa</span>
+          </Option>
         </Link>
       </Menu>
     </Section>

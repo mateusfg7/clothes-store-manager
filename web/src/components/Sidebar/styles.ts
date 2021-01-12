@@ -35,11 +35,22 @@ export const Option = styled.div`
   display: flex;
   align-items: center;
 
-  padding: 1rem 2.1rem;
+  padding: 1rem 1.7rem;
 
   border-left: 0.2rem solid transparent;
 
   transition: 0.2s;
+
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.icon {
+      font-size: 1.4rem;
+      margin-right: 0.5rem;
+    }
+  }
 
   &:hover {
     cursor: pointer;
