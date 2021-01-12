@@ -104,6 +104,15 @@ export const Main = styled.main`
       }
     }
 
+    div.item.content {
+      transition: 0.2s;
+      &:hover {
+        cursor: pointer;
+        background: ${props =>
+          transparentize(0.95, props.theme.colors.primary)};
+      }
+    }
+
     div.item + div.item {
       border-top: 1px solid rgba(0, 0, 0, 0.3);
     }

@@ -43,7 +43,7 @@ const Home: React.FC<Props> = ({ clothesList }) => {
           <div className="dashboard">
             <h1>Roupas Cadastradas</h1>
 
-            <div className="item">
+            <div className="item title">
               <span className="product-field product-description category">
                 Produto
               </span>
@@ -56,7 +56,7 @@ const Home: React.FC<Props> = ({ clothesList }) => {
             {clothesList.map(clothes => {
               return (
                 <Link key={clothes.id} href={`/clothes/${clothes.id}`}>
-                  <div className="item">
+                  <div className="item content">
                     <span className="product-field product-description">
                       {clothes.product}
                     </span>
