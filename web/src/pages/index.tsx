@@ -2,6 +2,7 @@ import React from 'react'
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { Display, NavSection, Main } from '../styles/pages/index'
 
@@ -54,18 +55,20 @@ const Home: React.FC<Props> = ({ clothesList }) => {
             </div>
             {clothesList.map(clothes => {
               return (
-                <div key={clothes.id} className="item">
-                  <span className="product-field product-description">
-                    {clothes.product}
-                  </span>
-                  <span className="product-field">{clothes.brand}</span>
-                  <span className="product-field">
-                    {clothes.current_inventory}
-                  </span>
-                  <span className="product-field">
-                    {numberFormat.format(clothes.price)}
-                  </span>
-                </div>
+                <Link key={clothes.id} href={`/clothes/${clothes.id}`}>
+                  <div className="item">
+                    <span className="product-field product-description">
+                      {clothes.product}
+                    </span>
+                    <span className="product-field">{clothes.brand}</span>
+                    <span className="product-field">
+                      {clothes.current_inventory}
+                    </span>
+                    <span className="product-field">
+                      {numberFormat.format(clothes.price)}
+                    </span>
+                  </div>
+                </Link>
               )
             })}
           </div>
