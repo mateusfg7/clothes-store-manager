@@ -3,6 +3,8 @@ import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
+import numberFormat from '@utils/number-format'
+
 import Sidebar from '@components/Sidebar'
 
 import { Display } from '@styles/global-components'
@@ -13,11 +15,6 @@ interface Props {
 }
 
 const Home: React.FC<Props> = ({ clothesList }) => {
-  const numberFormat = Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  })
-
   return (
     <div>
       <Head>
