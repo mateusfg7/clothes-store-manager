@@ -4,7 +4,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Display, NavSection, Main } from '../styles/pages/index'
+import { Display } from '../styles/global-components'
+import { NavSection, ExtendedMain } from '../styles/pages/index'
 
 interface Props {
   clothesList: Clothes[]
@@ -38,7 +39,7 @@ const Home: React.FC<Props> = ({ clothesList }) => {
             <div className="option">[C] Deletar Roupa</div>
           </nav>
         </NavSection>
-        <Main>
+        <ExtendedMain>
           {/* <div className="shortcuts"></div> */}
           <div className="dashboard">
             <h1>Roupas Cadastradas</h1>
@@ -72,7 +73,7 @@ const Home: React.FC<Props> = ({ clothesList }) => {
               )
             })}
           </div>
-        </Main>
+        </ExtendedMain>
       </Display>
     </div>
   )
