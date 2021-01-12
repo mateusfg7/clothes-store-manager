@@ -2,10 +2,10 @@ import React from 'react'
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 
-import Sidebar from '../../components/Sidebar'
+import Sidebar from '@components/Sidebar'
 
-import { Display } from '../../styles/global-components'
-import { ExtendedMain } from '../../styles/pages/clothes'
+import { Display } from '@styles/global-components'
+import { ExtendedMain } from '@styles/pages/clothes'
 
 interface Props {
   clothes: Clothes
