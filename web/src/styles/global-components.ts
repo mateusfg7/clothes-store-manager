@@ -25,10 +25,14 @@ export const Main = styled.main`
     padding: 1rem;
 
     border-radius: 1rem;
-    background: ${props => transparentize(0.9, props.theme.colors.primary)};
+    /* background: ${props =>
+      transparentize(0.9, props.theme.colors.primary)}; */
+
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
 
     h1 {
       margin-bottom: 1.5rem;
+      color: ${props => props.theme.colors.primary};
     }
   }
 `
