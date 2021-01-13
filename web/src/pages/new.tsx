@@ -1,9 +1,5 @@
 import React from 'react'
 import Head from 'next/head'
-import { format as dateFormat } from 'date-fns'
-
-import api from '@services/api'
-import numberFormat from '@utils/number-format'
 
 import Sidebar from '@components/Sidebar'
 
