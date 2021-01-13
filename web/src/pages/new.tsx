@@ -7,8 +7,7 @@ import numberFormat from '@utils/number-format'
 
 import Sidebar from '@components/Sidebar'
 
-import { Display } from '@styles/global-components'
-import { ExtendedMain } from '@styles/pages/clothes'
+import { Display, Main } from '@styles/global-components'
 
 const Clothes: React.FC = () => {
   return (
@@ -19,12 +18,12 @@ const Clothes: React.FC = () => {
 
       <Display>
         <Sidebar />
-        <ExtendedMain>
+        <Main>
           {/* <div className="shortcuts"></div> */}
           <div className="dashboard">
             <h1>Cadastrar nova roupa</h1>
           </div>
-        </ExtendedMain>
+        </Main>
       </Display>
     </>
   )
