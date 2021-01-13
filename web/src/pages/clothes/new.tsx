@@ -1,6 +1,9 @@
 /* eslint-disable camelcase */
+
 import React, { FormEvent, useState } from 'react'
 import Head from 'next/head'
+
+import api from '@services/api'
 
 import Sidebar from '@components/Sidebar'
 
@@ -44,10 +47,30 @@ const Clothes: React.FC = () => {
     })
   }
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault()
 
-    alert('enviado!')
+    const data = new FormData()
+
+    data.append('product', product)
+    data.append('brand', brand)
+    data.append('quantity', quantity)
+    data.append('provider', provider)
+    data.append('price', price)
+    data.append('currentInventory', quantity)
+    data.append('size', sizeList.toString())
+    data.append('inputValues', inputValues)
+    data.append('outputValues', outputValues)
+
+    const response = await api.post('/clothes', data)
+    // const response = await fetch('http://localhost:8000/clothes', {
+    //   method: 'POST',
+    //   body: data
+    // })
+
+    if (response.status === 201) {
+      alert('enviado!')
+    }
   }
 
   return (
