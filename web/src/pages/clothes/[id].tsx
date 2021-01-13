@@ -3,6 +3,7 @@ import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import { format as dateFormat } from 'date-fns'
 
+import api from '@services/api'
 import numberFormat from '@utils/number-format'
 
 import Sidebar from '@components/Sidebar'
@@ -105,8 +106,8 @@ export default Clothes
 export const getServerSideProps: GetServerSideProps = async context => {
   const query = context.query
 
-  const response = await fetch(`http://localhost:8000/clothes/${query.id}`)
-  const clothes: Clothes = await response.json()
+  const response = await api.get(`/clothes/${query.id}`)
+  const clothes: Clothes = response.data
 
   return {
     props: {
