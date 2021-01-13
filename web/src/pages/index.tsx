@@ -3,6 +3,7 @@ import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
+import api from '@services/api'
 import numberFormat from '@utils/number-format'
 
 import Sidebar from '@components/Sidebar'
@@ -66,8 +67,8 @@ const Home: React.FC<Props> = ({ clothesList }) => {
 export default Home
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const response = await fetch('http://localhost:8000/clothes')
-  const clothesList: Clothes[] = await response.json()
+  const response = await api.get('/clothes')
+  const clothesList: Clothes[] = response.data
 
   return {
     props: {
