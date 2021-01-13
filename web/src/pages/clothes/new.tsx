@@ -13,36 +13,35 @@ const Clothes: React.FC = () => {
   const [quantity, setQuantity] = useState<number>()
   const [provider, setProvider] = useState<string>()
   const [price, setPrice] = useState<number>()
+  const [sizeList, setSizeList] = useState<string[]>([])
   const [inputValues, setInputValues] = useState<number>()
   const [outputValues, setOutputValues] = useState<number>()
-  // currentInventory = quantity
 
-  const [PP_button_state, setPPButtonState] = useState<boolean>(false)
-  const [P_button_state, setPButtonState] = useState<boolean>(false)
-  const [M_button_state, setMButtonState] = useState<boolean>(false)
-  const [G_button_state, setGButtonState] = useState<boolean>(false)
-  const [GG_button_state, setGGButtonState] = useState<boolean>(false)
-  const [GGG_button_state, setGGGButtonState] = useState<boolean>(false)
+  const [sizeState, setSizeState] = useState({
+    PP: false,
+    P: false,
+    M: false,
+    G: false,
+    GG: false,
+    GGG: false
+  })
 
-  const handleButtonState = {
-    PP: () => {
-      PP_button_state ? setPPButtonState(false) : setPPButtonState(true)
-    },
-    P: () => {
-      P_button_state ? setPButtonState(false) : setPButtonState(true)
-    },
-    M: () => {
-      M_button_state ? setMButtonState(false) : setMButtonState(true)
-    },
-    G: () => {
-      G_button_state ? setGButtonState(false) : setGButtonState(true)
-    },
-    GG: () => {
-      GG_button_state ? setGGButtonState(false) : setGGButtonState(true)
-    },
-    GGG: () => {
-      GGG_button_state ? setGGGButtonState(false) : setGGGButtonState(true)
+  function handleSizeState(size) {
+    if (!sizeList.includes(size)) {
+      setSizeList([...sizeList, size])
+      setSizeState({ ...sizeState, [size]: true })
     }
+  }
+  function resetSizes() {
+    setSizeList([])
+    setSizeState({
+      PP: false,
+      P: false,
+      M: false,
+      G: false,
+      GG: false,
+      GGG: false
+    })
   }
 
   function handleSubmit(e: FormEvent) {
@@ -110,45 +109,64 @@ const Clothes: React.FC = () => {
                 <legend>Tamanhos disponíveis</legend>
                 <button
                   type="button"
-                  className={`size-button ${PP_button_state ? 'active' : ''}`}
-                  onClick={handleButtonState.PP}
+                  className={`size-button ${sizeState.PP ? 'active' : ''}`}
+                  onClick={() => {
+                    handleSizeState('PP')
+                  }}
                 >
                   PP
                 </button>
                 <button
                   type="button"
-                  className={`size-button ${P_button_state ? 'active' : ''}`}
-                  onClick={handleButtonState.P}
+                  className={`size-button ${sizeState.P ? 'active' : ''}`}
+                  onClick={() => {
+                    handleSizeState('P')
+                  }}
                 >
                   P
                 </button>
                 <button
                   type="button"
-                  className={`size-button ${M_button_state ? 'active' : ''}`}
-                  onClick={handleButtonState.M}
+                  className={`size-button ${sizeState.M ? 'active' : ''}`}
+                  onClick={() => {
+                    handleSizeState('M')
+                  }}
                 >
                   M
                 </button>
                 <button
                   type="button"
-                  className={`size-button ${G_button_state ? 'active' : ''}`}
-                  onClick={handleButtonState.G}
+                  className={`size-button ${sizeState.G ? 'active' : ''}`}
+                  onClick={() => {
+                    handleSizeState('G')
+                  }}
                 >
                   G
                 </button>
                 <button
                   type="button"
-                  className={`size-button ${GG_button_state ? 'active' : ''}`}
-                  onClick={handleButtonState.GG}
+                  className={`size-button ${sizeState.GG ? 'active' : ''}`}
+                  onClick={() => {
+                    handleSizeState('GG')
+                  }}
                 >
                   GG
                 </button>
                 <button
                   type="button"
-                  className={`size-button ${GGG_button_state ? 'active' : ''}`}
-                  onClick={handleButtonState.GGG}
+                  className={`size-button ${sizeState.GGG ? 'active' : ''}`}
+                  onClick={() => {
+                    handleSizeState('GGG')
+                  }}
                 >
                   GGG
+                </button>
+                <button
+                  type="button"
+                  className="reset-sizes"
+                  onClick={resetSizes}
+                >
+                  resetar
                 </button>
               </fieldset>
               <fieldset>
