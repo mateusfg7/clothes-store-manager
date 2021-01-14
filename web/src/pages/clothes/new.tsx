@@ -93,50 +93,55 @@ const Clothes: React.FC = () => {
           <div className="dashboard">
             <h1>Cadastrar nova roupa</h1>
             <form onSubmit={handleSubmit}>
-              <fieldset>
-                <legend>Descrição do produto</legend>
+              <div className="input-block">
+                <label htmlFor="product">Descrição do produto</label>
                 <input
                   id="product"
                   value={product}
                   onChange={event => setProduct(event.target.value)}
                 />
-              </fieldset>
-              <fieldset>
-                <legend>Marca</legend>
+              </div>
+
+              <div className="input-block">
+                <label htmlFor="brand">Marca</label>
                 <input
                   id="brand"
                   value={brand}
                   onChange={event => setBrand(event.target.value)}
                 />
-              </fieldset>
-              <fieldset>
-                <legend>Quantidade</legend>
+              </div>
+
+              <div className="input-block">
+                <label htmlFor="quantity">Quantidade</label>
                 <input
                   type="number"
                   id="quantity"
                   value={quantity}
                   onChange={event => setQuantity(Number(event.target.value))}
                 />
-              </fieldset>
-              <fieldset>
-                <legend>Fornecedor</legend>
+              </div>
+
+              <div className="input-block">
+                <label htmlFor="provider">Fornecedor</label>
                 <input
                   id="provider"
                   value={provider}
                   onChange={event => setProvider(event.target.value)}
                 />
-              </fieldset>
-              <fieldset>
-                <legend>Preço</legend>
+              </div>
+
+              <div className="input-block">
+                <label htmlFor="price">Preço</label>
                 <input
                   type="number"
                   id="price"
                   value={price}
                   onChange={event => setPrice(Number(event.target.value))}
                 />
-              </fieldset>
-              <fieldset>
-                <legend>Tamanhos disponíveis</legend>
+              </div>
+
+              <div className="input-block">
+                <label>Tamanhos disponíveis</label>
                 <button
                   type="button"
                   className={`size-button ${sizeState.PP ? 'active' : ''}`}
@@ -198,10 +203,10 @@ const Clothes: React.FC = () => {
                 >
                   resetar
                 </button>
-              </fieldset>
-              <fieldset>
-                <legend>Valores de entrada e saida</legend>
-                <label htmlFor="inputValues">entrada</label>
+              </div>
+
+              <div className="input-block">
+                <label htmlFor="inputValues">Valores de entrada</label>
                 <input
                   type="number"
                   id="inputValues"
@@ -210,7 +215,7 @@ const Clothes: React.FC = () => {
                     setInputValues(Number(event.target.value))
                   }}
                 />
-                <label htmlFor="outputValues">saida</label>
+                <label htmlFor="outputValues">Valores de saida</label>
                 <input
                   type="number"
                   id="outputValues"
@@ -219,7 +224,8 @@ const Clothes: React.FC = () => {
                     setOutputValues(Number(event.target.value))
                   }}
                 />
-              </fieldset>
+              </div>
+
               <button type="submit">Cadastrar</button>
             </form>
           </div>
