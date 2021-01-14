@@ -56,6 +56,8 @@ export const ExtendedMain = styled(Main)`
           background: none;
           border: none;
           border-radius: 0.5rem;
+
+          transition: 0.2s;
         }
 
         div.size-buttons {
@@ -114,6 +116,8 @@ export const ExtendedMain = styled(Main)`
 
       border: 1px solid ${props => props.theme.colors.primary};
       border-radius: 0.5rem;
+
+      transition: 0.2s;
 
       &:hover {
         background: ${props => props.theme.colors.primary};
