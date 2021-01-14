@@ -96,6 +96,7 @@ const Clothes: React.FC = () => {
               <div className="input-block">
                 <label htmlFor="product">Descrição do produto</label>
                 <input
+                  required
                   id="product"
                   value={product}
                   onChange={event => setProduct(event.target.value)}
@@ -105,6 +106,7 @@ const Clothes: React.FC = () => {
               <div className="input-block">
                 <label htmlFor="brand">Marca</label>
                 <input
+                  required
                   id="brand"
                   value={brand}
                   onChange={event => setBrand(event.target.value)}
@@ -114,6 +116,7 @@ const Clothes: React.FC = () => {
               <div className="input-block">
                 <label htmlFor="quantity">Quantidade</label>
                 <input
+                  required
                   type="number"
                   id="quantity"
                   value={quantity}
@@ -124,6 +127,7 @@ const Clothes: React.FC = () => {
               <div className="input-block">
                 <label htmlFor="provider">Fornecedor</label>
                 <input
+                  required
                   id="provider"
                   value={provider}
                   onChange={event => setProvider(event.target.value)}
@@ -133,6 +137,7 @@ const Clothes: React.FC = () => {
               <div className="input-block">
                 <label htmlFor="price">Preço</label>
                 <input
+                  required
                   type="number"
                   id="price"
                   value={price}
@@ -208,6 +213,7 @@ const Clothes: React.FC = () => {
               <div className="input-block">
                 <label htmlFor="inputValues">Valores de entrada</label>
                 <input
+                  required
                   type="number"
                   id="inputValues"
                   value={inputValues}
