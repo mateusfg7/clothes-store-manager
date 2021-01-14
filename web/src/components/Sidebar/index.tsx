@@ -20,7 +20,7 @@ const Sidebar: React.FC = () => {
             <span className="title">Roupas</span>
           </Option>
         </Link>
-        <Link href="#">
+        <Link href="/clothes/new">
           <Option className="option">
             <span className="icon">
               <BiPlusCircle />
