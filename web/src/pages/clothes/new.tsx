@@ -225,7 +225,6 @@ const Clothes: React.FC = () => {
                     <div className="input-block">
                       <label htmlFor="inputValues">Valores de entrada</label>
                       <input
-                        required
                         type="number"
                         id="inputValues"
                         value={inputValues}
