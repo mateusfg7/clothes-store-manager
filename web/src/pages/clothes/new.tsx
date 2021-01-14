@@ -1,9 +1,5 @@
-/* eslint-disable camelcase */
-
 import React, { FormEvent, useState } from 'react'
 import Head from 'next/head'
-
-import api from '@services/api'
 
 import Sidebar from '@components/Sidebar'
 
@@ -50,27 +46,38 @@ const Clothes: React.FC = () => {
   async function handleSubmit(e: FormEvent) {
     e.preventDefault()
 
-    const data = new FormData()
-
-    data.append('product', product)
-    data.append('brand', brand)
-    data.append('quantity', quantity)
-    data.append('provider', provider)
-    data.append('price', price)
-    data.append('currentInventory', quantity)
-    data.append('size', sizeList.toString())
-    data.append('inputValues', inputValues)
-    data.append('outputValues', outputValues)
-
-    const response = await api.post('/clothes', data)
-    // const response = await fetch('http://localhost:8000/clothes', {
-    //   method: 'POST',
-    //   body: data
-    // })
-
-    if (response.status === 201) {
-      alert('enviado!')
+    const data = {
+      product,
+      brand,
+      quantity,
+      provider,
+      price,
+      currentInventory: quantity,
+      size: sizeList.toString(),
+      inputValues,
+      outputValues
     }
+
+    const response = await fetch('/api/clothes', {
+      method: 'POST',
+      body: JSON.stringify(data)
+    })
+
+    const status = response.status
+
+    const statusCodes = {
+      201: () => {
+        alert('enviado!')
+      },
+      400: () => {
+        alert('bad request')
+      },
+      500: () => {
+        alert('internal server error!')
+      }
+    }
+
+    statusCodes[status]()
   }
 
   return (
