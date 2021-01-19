@@ -8,6 +8,7 @@ export default class Clothes extends Model {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
+      autoIncrement: true,
     },
     product: DataTypes.STRING, // produto
     brand: DataTypes.STRING,
