@@ -2,6 +2,7 @@
 - [Init Server](#init-server)
   - [Development](#development)
   - [Production](#production)
+    - [With Docker](#with-docker)
 - [HTTPS](#use-https)
 - [API](#api)
   - [Create](#create)
@@ -9,6 +10,8 @@
   - [Show](#show)
   - [Delete](#delete)
   - [Update](#update)
+
+
 ## Init server
 ### Development
 Install [Denon](https://deno.land/x/denon):
@@ -36,6 +39,12 @@ and run the production server:
 deno run --allow-read --allow-write --allow-net src/app.ts
 ```
 > to use SSL see [Use HTTPS](#use-https) topic
+
+#### With Docker
+to run the production server with Docker, install [Docker]() and [docker-compose], and run:
+```bash
+docker-compose up
+```
 
 
 ## Use HTTPS
