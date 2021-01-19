@@ -41,7 +41,7 @@ deno run --allow-read --allow-write --allow-net src/app.ts
 > to use SSL see [Use HTTPS](#use-https) topic
 
 #### With Docker
-to run the production server with Docker, install [Docker]() and [docker-compose], and run:
+to run the production server with Docker, install [Docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/), and run:
 ```bash
 docker-compose up
 ```
