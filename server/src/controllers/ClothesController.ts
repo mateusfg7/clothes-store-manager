@@ -25,21 +25,26 @@ export default {
       outputValues,
     }: IRequest = await request.value;
 
-    await Clothes.create([
-      {
-        product,
-        brand,
-        quantity, // quantidade
-        provider, // fornecedor
-        price, // preço
-        current_inventory: currentInventory, // estoque atual
-        size, // tamanho
-        input_values: inputValues, // valor de entrada
-        output_values: outputValues, // valor de saida
-      },
-    ]);
+    try {
+      await Clothes.create([
+        {
+          product,
+          brand,
+          quantity, // quantidade
+          provider, // fornecedor
+          price, // preço
+          current_inventory: currentInventory, // estoque atual
+          size, // tamanho
+          input_values: inputValues, // valor de entrada
+          output_values: outputValues, // valor de saida
+        },
+      ]);
 
-    context.response.status = 201;
+      context.response.status = 201;
+    } catch (err) {
+      console.log(err);
+      context.response.status = 500;
+    }
   },
 
   async index(context: RouterContext) {
