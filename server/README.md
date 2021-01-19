@@ -1,5 +1,7 @@
 # Back-end
 - [Init Server](#init-server)
+  - [Development](#development)
+  - [Production](#production)
 - [HTTPS](#use-https)
 - [API](#api)
   - [Create](#create)
@@ -8,12 +10,7 @@
   - [Delete](#delete)
   - [Update](#update)
 ## Init server
-Create a `.env` file and add the follow environment variables:
-```dotenv
-PORT=[YOUR PORT NUMBER]
-```
-follow the `.env.example` model.
-
+### Development
 Install [Denon](https://deno.land/x/denon):
 ```text
 deno install -qAf --unstable https://deno.land/x/denon@2.4.4/denon.ts
@@ -22,7 +19,19 @@ and run the development server:
 ```text
 denon dev
 ```
-or the production server:
+### Production
+Create a `.env` file and add the follow environment variables:
+```dotenv
+PORT=[YOUR PORT NUMBER]
+
+PG_HOST=[POSTGRES HOST]
+PG_USER=[POSTGRES USERNAME]
+PG_PASSWORD=[POSTGRES PASSWORD]
+PG_DATABASE=[POSTGRES DATABASE]
+```
+follow the `.env.example` model.
+
+and run the production server:
 ```text
 deno run --allow-read --allow-write --allow-net src/app.ts
 ```
@@ -46,7 +55,7 @@ _route_: **POST /clothes**
 _request body_:
 ```yml
 JSON:
-  product: Description of the product - string 
+  product: Description of the product - string
   brand: Product brand - string
   quantity: Quantity of product purchased - number
   provider: Product Provider - string
@@ -62,11 +71,11 @@ e.g.:
   "product": "CROPPED COURINO PRETO",
   "brand": "ANTONY",
   "quantity": 2,
-  "provider": "Luana", 
-  "price": 20.00, 
-  "currentInventory": 2, 
-  "size": "G,M", 
-  "inputValues": 20.00, 
+  "provider": "Luana",
+  "price": 20.00,
+  "currentInventory": 2,
+  "size": "G,M",
+  "inputValues": 20.00,
   "outputValues": 20.00
 }
 ```
@@ -83,7 +92,7 @@ _expected response status code_: **200**
 _expected response body_:
 ```yml
 ARRAY OF JSON:
-  product: Description of the product - string 
+  product: Description of the product - string
   brand: Product brand - string
   quantity: Quantity of product purchased - number
   provider: Product Provider - string
@@ -104,7 +113,7 @@ _expected response status code_: **200**
 _expected response body_:
 ```yml
 JSON:
-  product: Description of the product - string 
+  product: Description of the product - string
   brand: Product brand - string
   quantity: Quantity of product purchased - number
   provider: Product Provider - string
@@ -128,7 +137,7 @@ _route_: **PUT /clothes/:id**
 _request body_:
 ```yml
 JSON:
-  product: Description of the product - string 
+  product: Description of the product - string
   brand: Product brand - string
   quantity: Quantity of product purchased - number
   provider: Product Provider - string
@@ -144,11 +153,11 @@ e.g.:
   "product": "CROPPED COURINO PRETO",
   "brand": "ANTONY",
   "quantity": 2,
-  "provider": "Luana", 
-  "price": 20.00, 
-  "currentInventory": 2, 
-  "size": "G,M", 
-  "inputValues": 20.00, 
+  "provider": "Luana",
+  "price": 20.00,
+  "currentInventory": 2,
+  "size": "G,M",
+  "inputValues": 20.00,
   "outputValues": 20.00
 }
 ```
