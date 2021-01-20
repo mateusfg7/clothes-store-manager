@@ -10,5 +10,5 @@ RUN deno cache src/deps.ts
 
 ADD . .
 
-CMD ["run", "--allow-read", "--allow-write", "--allow-net", "src/app.ts"]
+CMD ["run", "--allow-read", "--allow-net", "src/app.ts"]
 
