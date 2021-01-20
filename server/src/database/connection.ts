@@ -1,12 +1,10 @@
-import { config, Database } from "../deps.ts";
+import { config, Database, PostgresConnector, SQLite3Connector } from "../deps.ts";
 
-const database = Deno.args.includes("--dev")
-  ? new Database(
-    "sqlite3",
+const connector = Deno.args.includes("--dev")
+  ? new SQLite3Connector(
     { filepath: "./src/database/clothes_manager_database.sqlite" },
   )
-  : new Database(
-    "postgres",
+  : new PostgresConnector(
     {
       host: config().PG_HOST,
       username: config().PG_USER,
@@ -14,5 +12,7 @@ const database = Deno.args.includes("--dev")
       database: config().PG_DATABASE,
     },
   );
+
+const database = new Database(connector)
 
 export default database;
