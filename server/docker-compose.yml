@@ -1,8 +1,18 @@
 version: "3.9"
 
 services:
+  db:
+    image: postgres:latest
+    container_name: app-databse
+    environment:
+      - POSTGRES_PASSWORD=${PG_PASSWORD}
+    ports:
+      - "${PG_PORT}:${PG_PORT}"
+
   server:
     build: .
-    container_name: clothes-store-manager-server
+    container_name: app-server
     ports:
       - "${PORT}:${PORT}"
+    depends_on:
+      - db
