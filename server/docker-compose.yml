@@ -1,18 +1,27 @@
 version: "3.9"
 
 services:
-  db:
+  postgres:
     image: postgres:latest
-    container_name: app-databse
+    container_name: csm-database
     environment:
       - POSTGRES_PASSWORD=${PG_PASSWORD}
+    networks:
+      - csm-net
     ports:
       - "${PG_PORT}:${PG_PORT}"
 
   server:
     build: .
-    container_name: app-server
+    container_name: csm-server
+    environment:
+      - PG_HOST=postgres
+    networks:
+      - csm-net
     ports:
       - "${PORT}:${PORT}"
     depends_on:
-      - db
+      - postgres
+
+networks:
+  csm-net:
