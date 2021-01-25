@@ -34,7 +34,6 @@ export const ExtendedMain = styled(Main)`
     }
 
     div.item.content {
-      /* border: 1px solid red; */
       border-radius: 1rem;
       transition: 0.4s;
       &:hover {
@@ -43,5 +42,22 @@ export const ExtendedMain = styled(Main)`
           transparentize(0.92, props.theme.colors.primary)};
       }
     }
+  }
+`
+
+export const EmptyList = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 5rem;
+
+  font-size: 1.5rem;
+
+  opacity: 0.6;
+
+  .icon {
+    font-size: 2rem;
   }
 `
