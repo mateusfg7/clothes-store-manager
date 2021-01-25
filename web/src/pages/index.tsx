@@ -19,7 +19,7 @@ interface Props {
   clothesList: Clothes[]
 }
 
-const ClothesCard: React.FC<Clothes> = clothes => {
+const ClothesCard: React.FC<Clothes> = ({ clothes }) => {
   return (
     <Link href={`/clothes/${clothes.id}`}>
       <div className="item content">
@@ -60,8 +60,6 @@ const Home: React.FC<Props> = ({ clothesList }) => {
               </span>
               <span className="product-field category">Preço</span>
             </div>
-
-            {/* {test ? <h1>verdadeiro</h1> : <h1>falso</h1>} */}
             {clothesList.length > 0 ? (
               clothesList.map(clothes => (
                 <ClothesCard clothes={clothes} key={clothes.id} />
