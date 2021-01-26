@@ -2,7 +2,7 @@ import React, { FormEvent, useState } from 'react'
 import Head from 'next/head'
 
 import Sidebar from '@components/Sidebar'
-import FormDescription from '@components/FormDescription'
+import FormDescription from '@components/layout/FormDescription'
 
 import { Display } from '@styles/global-components'
 import { ExtendedMain } from '@styles/pages/new'
