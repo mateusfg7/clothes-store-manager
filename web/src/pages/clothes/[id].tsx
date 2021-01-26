@@ -6,7 +6,7 @@ import { format as dateFormat } from 'date-fns'
 import api from '@services/api'
 import numberFormat from '@utils/number-format'
 
-import Sidebar from '@components/Sidebar'
+import Sidebar from '@components/layout/Sidebar'
 
 import { Display } from '@styles/global-components'
 import { ExtendedMain } from '@styles/pages/clothes'

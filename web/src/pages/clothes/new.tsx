@@ -1,7 +1,7 @@
 import React, { FormEvent, useState } from 'react'
 import Head from 'next/head'
 
-import Sidebar from '@components/Sidebar'
+import Sidebar from '@components/layout/Sidebar'
 import FormDescription from '@components/layout/FormDescription'
 
 import { Display } from '@styles/global-components'
