@@ -3,11 +3,19 @@ import Head from 'next/head'
 
 import Sidebar from '@components/layout/Sidebar'
 import FormDescription from '@components/layout/FormDescription'
+import PopUp from '@components/modal/PopUp'
 
 import { Display } from '@styles/global-components'
 import { ExtendedMain } from '@styles/pages/new'
 
 const Clothes: React.FC = () => {
+  const [successModalIsShow, setSuccessModalIsShow] = useState(false)
+  const [loadingModalIsShow, setLoadingModalIsShow] = useState(false)
+
+  function closeSuccessModal() {
+    setSuccessModalIsShow(false)
+  }
+
   const [product, setProduct] = useState<string>()
   const [brand, setBrand] = useState<string>()
   const [quantity, setQuantity] = useState<number>()
@@ -59,6 +67,8 @@ const Clothes: React.FC = () => {
       outputValues
     }
 
+    setLoadingModalIsShow(true)
+
     const response = await fetch('/api/clothes', {
       method: 'POST',
       body: JSON.stringify(data)
@@ -68,7 +78,7 @@ const Clothes: React.FC = () => {
 
     const statusCodes = {
       201: () => {
-        alert('enviado!')
+        setSuccessModalIsShow(true)
       },
       400: () => {
         alert('bad request')
@@ -79,6 +89,7 @@ const Clothes: React.FC = () => {
     }
 
     statusCodes[status]()
+    setLoadingModalIsShow(false)
   }
 
   return (
@@ -88,6 +99,16 @@ const Clothes: React.FC = () => {
       </Head>
 
       <Display>
+        {loadingModalIsShow && <PopUp text="CADASTRANDO..." />}
+
+        {successModalIsShow && (
+          <PopUp
+            text="CADASTRADO COM SUCESSO!"
+            closeButton
+            closeModal={closeSuccessModal}
+          />
+        )}
+
         <Sidebar />
         <ExtendedMain>
           {/* <div className="shortcuts"></div> */}
