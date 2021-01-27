@@ -42,6 +42,9 @@ export const ExtendedMain = styled(Main)`
 
         border: 1px solid ${props => props.theme.colors.primary};
         border-radius: 0.5rem;
+
+        background-color: rgba(255, 255, 255, 0.01);
+        color: ${props => props.theme.colors.text};
       }
 
       div.all-buttons {

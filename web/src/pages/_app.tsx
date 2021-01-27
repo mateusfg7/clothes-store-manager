@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components'
 
 import GlobalStyle from '@styles/global'
 import lightTheme from '@styles/theme/light'
+import darkTheme from '@styles/theme/dark'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
