@@ -1,7 +1,9 @@
 import React from 'react'
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import { format as dateFormat } from 'date-fns'
+import { BiArrowBack } from 'react-icons/bi'
 
 import api from '@services/api'
 import numberFormat from '@utils/number-format'
@@ -16,6 +18,8 @@ interface Props {
 }
 
 const Clothes: React.FC<Props> = ({ clothes }) => {
+  const router = useRouter()
+
   const formattedCreationTimestamp = dateFormat(
     new Date(clothes.createdAt),
     'PPp'
@@ -37,7 +41,11 @@ const Clothes: React.FC<Props> = ({ clothes }) => {
           {/* <div className="shortcuts"></div> */}
           <div className="dashboard">
             <section>
-              <h1>{clothes.product}</h1>
+              <header>
+                <BiArrowBack className="arrow-back" onClick={router.back} />
+                <h1>{clothes.product}</h1>
+                <div />
+              </header>
               <div>
                 <p>
                   <span className="title">ID:</span>

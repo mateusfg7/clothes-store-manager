@@ -10,6 +10,26 @@ export const ExtendedMain = styled(Main)`
     justify-content: center;
     align-items: center;
 
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 15px;
+      width: 100%;
+
+      .arrow-back {
+        font-size: 1.5rem;
+        color: ${props => props.theme.colors.primary};
+
+        cursor: pointer;
+      }
+
+      div {
+        width: min-content;
+      }
+    }
+
     div {
       padding: 15px;
       width: 100%;
