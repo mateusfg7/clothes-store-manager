@@ -11,6 +11,7 @@ import api from '@services/api'
 import numberFormat from '@utils/number-format'
 
 import Sidebar from '@components/layout/Sidebar'
+import { VariantsContainer, VariantsItem } from '@components/motion/Variants'
 
 import { Display } from '@styles/global-components'
 import { ExtendedMain, EmptyList } from '@styles/pages/index'
@@ -60,16 +61,22 @@ const Home: React.FC<Props> = ({ clothesList }) => {
               </span>
               <span className="product-field category">Preço</span>
             </div>
-            {clothesList.length > 0 ? (
-              clothesList.map(clothes => (
-                <ClothesCard clothes={clothes} key={clothes.id} />
-              ))
-            ) : (
-              <EmptyList className="content">
-                <BiCloset className="icon" />
-                Nenhuma roupa cadastrada
-              </EmptyList>
-            )}
+            <div>
+              {clothesList.length > 0 ? (
+                <VariantsContainer>
+                  {clothesList.map(clothes => (
+                    <VariantsItem key={clothes.id} direction="y">
+                      <ClothesCard clothes={clothes} />
+                    </VariantsItem>
+                  ))}
+                </VariantsContainer>
+              ) : (
+                <EmptyList className="content">
+                  <BiCloset className="icon" />
+                  Nenhuma roupa cadastrada
+                </EmptyList>
+              )}
+            </div>
           </div>
         </ExtendedMain>
       </Display>
