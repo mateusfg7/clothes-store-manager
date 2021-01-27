@@ -49,7 +49,9 @@ const Home: React.FC<Props> = ({ clothesList }) => {
         <ExtendedMain>
           {/* <div className="shortcuts"></div> */}
           <div className="dashboard">
-            <h1>Roupas Cadastradas</h1>
+            <header>
+              <h1>Roupas Cadastradas</h1>
+            </header>
 
             <div className="item title">
               <span className="product-field product-description category">
