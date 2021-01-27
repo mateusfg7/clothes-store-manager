@@ -30,8 +30,11 @@ export const Main = styled.main`
 
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
 
-    h1 {
+    header {
       margin-bottom: 1.5rem;
+    }
+
+    h1 {
       color: ${props => props.theme.colors.primary};
     }
   }
