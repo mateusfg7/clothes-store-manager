@@ -92,7 +92,9 @@ const Clothes: React.FC = () => {
         <ExtendedMain>
           {/* <div className="shortcuts"></div> */}
           <div className="dashboard">
-            <h1>Cadastrar nova roupa</h1>
+            <header>
+              <h1>Cadastrar nova roupa</h1>
+            </header>
 
             <div className="sections">
               <section className="content">
