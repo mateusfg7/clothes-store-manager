@@ -1,4 +1,4 @@
-const defaultTheme = {
+const lightTheme = {
   colors: {
     background: 'rgba(194, 151, 184, 0.1)',
     static_background: '#f8f4f7',
@@ -8,4 +8,4 @@ const defaultTheme = {
   }
 }
 
-export default defaultTheme
+export default lightTheme
