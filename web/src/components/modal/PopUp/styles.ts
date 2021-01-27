@@ -20,7 +20,7 @@ export const Container = styled.div`
 
   border-radius: 1rem;
 
-  background-color: #f8f4f7;
+  background-color: ${props => props.theme.colors.static_background};
 
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
 
